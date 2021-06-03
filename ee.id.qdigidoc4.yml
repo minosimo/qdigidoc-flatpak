@@ -1,0 +1,127 @@
+app-id: ee.id.qdigidoc4
+command: qdigidoc4
+runtime: org.kde.Platform
+runtime-version: '5.12'
+sdk: org.kde.Sdk
+
+finish-args:
+  # User needs to be able to store & access signed files
+  - --filesystem=home
+  # Network is needed for signing
+  - --share=network
+  # Wayland
+  - --socket=wayland
+  # X11
+  - --share=ipc
+  - --socket=fallback-x11
+  # Smartcard
+  - --device=all
+  - --socket=pcsc
+modules:
+  - name: xerces-c
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://downloads.apache.org//xerces/c/3/sources/xerces-c-3.2.3.tar.gz
+        sha256: fb96fc49b1fb892d1e64e53a6ada8accf6f0e6d30ce0937956ec68d39bd72c7e
+
+  - name: xsd
+    buildsystem: simple
+    build-commands:
+      - make
+      - make install install_prefix=/app
+    sources:
+      - type: archive
+        url: https://www.codesynthesis.com/download/xsd/4.0/xsd-4.0.0+dep.tar.bz2
+        sha256: eca52a9c8f52cdbe2ae4e364e4a909503493a0d51ea388fc6c9734565a859817
+
+  - name: xml-security-c
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.2.tar.gz
+        sha256: c303a2b08cb9ca0f5594adcbb83829b1e793175d7114a82f7d78def8bb2e30df
+
+  - name: xxd
+    buildsystem: simple
+    build-commands:
+      - cd src && make installtools prefix=/app
+    sources:
+      - type: archive
+        url: https://github.com/vim/vim/archive/refs/tags/v8.2.2929.tar.gz
+        sha256: 55a03cdcf217f9386dc961f5e1384ec7af6fc2746cbcb79ec6c7a6e2d801109b
+
+  - name: libdigidocpp
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.6/libdigidocpp-3.14.6.tar.gz
+        sha256: cc33312722ff4f7717aea80c4f5e726650a8ce0c8eb799cdadea2db6eba21879
+
+  - name: openldap
+    buildsystem: autotools
+    config-opts:
+      - --disable-backends
+      - --disable-overlays
+      - --disable-slapd
+      - --disable-debug
+      - --enable-dynamic
+      - --without-threads
+      - --with-tls=gnutls
+    cleanup:
+      - /bin
+      - /share/man
+    sources:
+      - type: archive
+        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.4.tgz
+        sha256: 61c03c078d70cd859e504fa9555d7d52426eed4b29e6a39e828afc213e4fb356
+      - type: script
+        dest-filename: autogen.sh
+        commands:
+          - AUTOMAKE=/bin/true autoreconf -vfi
+
+  - name: libusb
+    config-opts:
+      - --disable-static
+      - --disable-udev
+    cleanup:
+      - /lib/*.la
+      - /lib/pkgconfig
+      - /include
+    sources:
+      - type: archive
+        url: https://github.com/libusb/libusb/archive/v1.0.24.tar.gz
+        sha256: b7724c272dfc5713dce88ff717efd60f021ca5b7c8e30f08ebb2c42d2eea08ae
+    post-install:
+      - install -Dm644 COPYING /app/share/licenses/libusb/COPYING
+
+  - name: pcsc-lite
+    config-opts:
+      - --enable-libusb
+      - --disable-libudev
+      - --disable-libsystemd
+      - --without-systemdsystemunitdir
+    post-install:
+      - rm /app/sbin/pcscd
+      - rmdir /app/sbin || true
+    cleanup:
+      - /lib/libpcscspy.so
+      - /lib/libpcsclite.so
+    sources:
+      - type: archive
+        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.1.tar.gz
+        sha256: 1eaad042a8a8f9d398bf3fc27a35e516e4f0b90437a0e11a46d280ddd9c5848d
+
+  - name: qdigidoc4
+    buildsystem: cmake
+    build-options:
+      build-args:
+        - --share=network
+    sources:
+      - type: git
+        url: https://github.com/open-eid/DigiDoc4-Client.git
+        tag: v4.2.8
+        commit: 0b5a7984420afe215c246f5999a1eeec5bd4b1f1
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
