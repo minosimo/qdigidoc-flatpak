@@ -1,4 +1,4 @@
-app-id: ee.id.qdigidoc4
+app-id: ee.ria.qdigidoc4
 command: qdigidoc4
 runtime: org.kde.Platform
 runtime-version: '5.12'
