@@ -7,7 +7,7 @@ sdk: org.kde.Sdk
 finish-args:
   # User needs to be able to store & access signed files
   - --filesystem=home
-  # Network is needed for signing
+  # Network is needed for some parts of the application's functionality
   - --share=network
   # Wayland
   - --socket=wayland
@@ -122,6 +122,9 @@ modules:
     buildsystem: cmake
     build-options:
       build-args:
+        # This is needed because during the build TSL files are downloaded
+        # See the following if building in a network-disabled sandbox is required:
+        # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips
         - --share=network
     sources:
       - type: git
