@@ -12,11 +12,11 @@ finish-args:
   # Wayland
   - --socket=wayland
   # X11
-  - --share=ipc
   - --socket=fallback-x11
+  - --share=ipc
   # Smartcard
-  - --device=all
   - --socket=pcsc
+  - --device=all
 modules:
   - name: xerces-c
     buildsystem: cmake
@@ -122,8 +122,8 @@ modules:
     buildsystem: cmake
     build-options:
       build-args:
-        # This is needed because during the build TSL files are downloaded
-        # See the following if building in a network-disabled sandbox is required:
+        # This is needed because during the build TSL files are downloaded.
+        # If building in a network-disabled sandbox is required, see the following:
         # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips
         - --share=network
     sources:
