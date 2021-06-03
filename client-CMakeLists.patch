@@ -1,0 +1,33 @@
+--- DigiDoc4-Client/client/CMakeLists.txt	2021-06-03 10:22:23.485463800 +0300
++++ DigiDoc4-Client/client/CMakeLists-fix.txt	2021-06-03 21:48:24.782613389 +0300
+@@ -313,25 +313,25 @@ else()
+ 	configure_file( qdigidoc4.1.cmake qdigidoc4.1 )
+ 	install( TARGETS ${PROGNAME} DESTINATION ${CMAKE_INSTALL_BINDIR} )
+ 	install( FILES ${CMAKE_CURRENT_BINARY_DIR}/qdigidoc4.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 )
+-	install( FILES qdigidoc4.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications )
+-	install( FILES qdigidoc4.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/mime/packages )
++	install( FILES qdigidoc4.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications RENAME ee.ria.qdigidoc4.desktop )
++	install( FILES qdigidoc4.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/mime/packages RENAME ee.ria.qdigidoc4.xml )
+ 	foreach(RES 16 22 32 48 128)
+ 		foreach(TGT application-vnd.etsi.asic-e+zip.png application-vnd.etsi.asic-s+zip.png application-x-ddoc.png application-vnd.lt.archyvai.adoc-2008.png)
+ 			install(
+ 				FILES images/qdigidoc_client_document_${RES}x${RES}.png
+ 				DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/${RES}x${RES}/mimetypes/
+-				RENAME ${TGT}
++				RENAME ee.ria.qdigidoc4.${TGT}
+ 			)
+ 		endforeach()
+ 		install(
+ 			FILES images/qdigidoc_crypto_document_${RES}x${RES}.png
+ 			DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/${RES}x${RES}/mimetypes/
+-			RENAME application-x-cdoc.png
++			RENAME ee.ria.qdigidoc4.application-x-cdoc.png
+ 		)
+ 		install(
+ 			FILES images/digidoc_icon_${RES}x${RES}.png
+ 			DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/${RES}x${RES}/apps/
+-			RENAME qdigidoc4.png
++			RENAME ee.ria.qdigidoc4.png
+ 		)
+ 	endforeach()
+ endif()

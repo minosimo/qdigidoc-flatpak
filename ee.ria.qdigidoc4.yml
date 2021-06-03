@@ -113,6 +113,8 @@ modules:
         sha256: 1eaad042a8a8f9d398bf3fc27a35e516e4f0b90437a0e11a46d280ddd9c5848d
 
   - name: opensc
+    cleanup:
+      - /share/applications/org.opensc.notify.desktop
     sources:
       - type: archive
         url: https://github.com/OpenSC/OpenSC/releases/download/0.21.0/opensc-0.21.0.tar.gz
@@ -136,3 +138,7 @@ modules:
           tag-pattern: ^v([\d.]+)$
       - type: patch
         path: QPKCS11.patch
+      - type: patch
+        path: client-CMakeLists.patch
+      - type: patch
+        path: qdigidoc4-desktop.patch
