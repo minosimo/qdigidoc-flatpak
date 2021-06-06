@@ -2,6 +2,7 @@
 
 # Native manifest
 # See: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#linux
+mkdir -p ~/.mozilla/native-messaging-hosts/
 ln -s /var/lib/flatpak/app/ee.ria.qdigidoc4/current/active/files/lib/mozilla/native-messaging-hosts/ee.ria.esteid.json ~/.mozilla/native-messaging-hosts/
 
 # Extension
