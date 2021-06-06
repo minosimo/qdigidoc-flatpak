@@ -129,13 +129,9 @@ modules:
         # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips
         - --share=network
     sources:
-      - type: git
-        url: https://github.com/open-eid/DigiDoc4-Client.git
-        tag: v4.2.8
-        commit: 0b5a7984420afe215c246f5999a1eeec5bd4b1f1
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+      - type: archive
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.8/qdigidoc4-4.2.8.tar.gz
+        sha256: e5f4b5c5e54d0b8fe2d5f5556f1de158c61d5c5ede028c3fc7241416f2ea8c01
       - type: patch
         path: QPKCS11.patch
       - type: patch
