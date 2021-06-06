@@ -1,0 +1,11 @@
+--- chrome-token-signing/host-linux/ff/ee.ria.esteid.json	2021-06-06 13:20:23.966069519 +0300
++++ chrome-token-signing/host-linux/ff/ee.ria.esteid-fix.json	2021-06-06 18:36:10.001021672 +0300
+@@ -1,7 +1,7 @@
+ {
+     "name": "ee.ria.esteid",
+     "description": "Give signatures with your eID on the web",
+-    "path": "/usr/bin/chrome-token-signing",
++    "path": "/var/lib/flatpak/app/ee.ria.qdigidoc4/current/active/files/bin/chrome-token-signing",
+     "type": "stdio",
+     "allowed_extensions": [ "{443830f0-1fff-4f9a-aa1e-444bafbc7319}" ]
+ }

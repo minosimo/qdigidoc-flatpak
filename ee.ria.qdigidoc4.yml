@@ -131,6 +131,8 @@ modules:
         sha256: 1a7bbde2627461656a4385e19cc771bf137c600f32912b6eb635c05681c4f104
       - type: patch
         path: chrome-token-signing-patches/chrome-token-signing.pro.patch
+      - type: patch
+        path: chrome-token-signing-patches/native-messaging.patch
 
   - name: qdigidoc4
     buildsystem: cmake
