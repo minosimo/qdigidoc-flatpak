@@ -133,8 +133,8 @@ modules:
         url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.8/qdigidoc4-4.2.8.tar.gz
         sha256: e5f4b5c5e54d0b8fe2d5f5556f1de158c61d5c5ede028c3fc7241416f2ea8c01
       - type: patch
-        path: QPKCS11.patch
+        path: qdigidoc4-patches/QPKCS11.patch
       - type: patch
-        path: client-CMakeLists.patch
+        path: qdigidoc4-patches/client-CMakeLists.patch
       - type: patch
-        path: qdigidoc4-desktop.patch
+        path: qdigidoc4-patches/qdigidoc4-desktop.patch
