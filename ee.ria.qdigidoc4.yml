@@ -120,6 +120,18 @@ modules:
         url: https://github.com/OpenSC/OpenSC/releases/download/0.21.0/opensc-0.21.0.tar.gz
         sha256: 2bfbbb1dcb4b8d8d75685a3e95c30798fb6411d4efab3690fd89d2cb25f3325e
 
+  # This can be called from the browser extension to sign documents
+  - name: chrome-token-signing
+    buildsystem: qmake
+    builddir: true
+    subdir: host-linux
+    sources:
+      - type: archive
+        url:  https://github.com/open-eid/chrome-token-signing/archive/refs/tags/v1.1.4.tar.gz
+        sha256: 1a7bbde2627461656a4385e19cc771bf137c600f32912b6eb635c05681c4f104
+      - type: patch
+        path: chrome-token-signing-patches/chrome-token-signing.pro.patch
+
   - name: qdigidoc4
     buildsystem: cmake
     build-options:
