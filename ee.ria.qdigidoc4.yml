@@ -1,5 +1,5 @@
 app-id: ee.ria.qdigidoc4
-command: qdigidoc4
+command: run.sh
 runtime: org.kde.Platform
 runtime-version: '5.14'
 sdk: org.kde.Sdk
@@ -152,3 +152,11 @@ modules:
         path: qdigidoc4-patches/client-CMakeLists.patch
       - type: patch
         path: qdigidoc4-patches/qdigidoc4-desktop.patch
+        # qdigidoc4 saves files in $TMPDIR before opening them. Since this is inaccessible, we provide a wrapper script,
+        # as advised here: https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - env TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" qdigidoc4 "$@"
+    post-install:
+      - install run.sh /app/bin
