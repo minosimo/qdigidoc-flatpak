@@ -1,6 +1,27 @@
---- DigiDoc4-Client/client/CMakeLists.txt	2021-06-03 10:22:23.485463800 +0300
-+++ DigiDoc4-Client/client/CMakeLists-fix.txt	2021-06-03 21:48:24.782613389 +0300
-@@ -313,25 +313,25 @@ else()
+diff --git a/client/CMakeLists.txt b/client/CMakeLists.txt
+index 1fbc84e..8e2d654 100644
+--- a/client/CMakeLists.txt
++++ b/client/CMakeLists.txt
+@@ -1,17 +1,8 @@
+ set_app_name( PROGNAME qdigidoc4 )
+ 
+-add_executable( TSLDownload TSLDownload.cpp )
+-target_link_libraries( TSLDownload Qt5::Network )
+-add_custom_command(
+-	OUTPUT TSL.qrc
+-	DEPENDS TSLDownload
+-	COMMAND $<TARGET_FILE:TSLDownload> "${CMAKE_CURRENT_BINARY_DIR}" ${TSL_URL} ${TSL_INCLUDE}
+-	WORKING_DIRECTORY ${_qt5Core_install_prefix}/bin
+-)
+-
+ configure_file( translations/tr.qrc tr.qrc COPYONLY )
+ qt5_add_translation( SOURCES translations/en.ts translations/et.ts translations/ru.ts )
+-qt5_add_resources( SOURCES images/images.qrc fonts/fonts.qrc ${CMAKE_CURRENT_BINARY_DIR}/tr.qrc ${CMAKE_CURRENT_BINARY_DIR}/TSL.qrc )
++qt5_add_resources( SOURCES images/images.qrc fonts/fonts.qrc ${CMAKE_CURRENT_BINARY_DIR}/tr.qrc TSL.qrc )
+ qt5_wrap_ui( SOURCES
+ 	MainWindow.ui
+ 	dialogs/AddRecipients.ui
+@@ -313,25 +304,25 @@ else()
  	configure_file( qdigidoc4.1.cmake qdigidoc4.1 )
  	install( TARGETS ${PROGNAME} DESTINATION ${CMAKE_INSTALL_BINDIR} )
  	install( FILES ${CMAKE_CURRENT_BINARY_DIR}/qdigidoc4.1 DESTINATION ${CMAKE_INSTALL_MANDIR}/man1 )
