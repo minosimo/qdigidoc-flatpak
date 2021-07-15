@@ -150,8 +150,8 @@ modules:
         path: qdigidoc4/client-CMakeLists.patch
       - type: patch
         path: qdigidoc4/qdigidoc4-desktop.patch
-        # See guide for building in a sandboxed environment:
-        # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
+      # See guide for building in a sandboxed environment:
+      # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
         sha256: c8a544f078cd6521e14ecbbb11843fa08b755eb198cc2d0f7da3335e4638e942
@@ -177,8 +177,8 @@ modules:
         dest-filename: common/config.pub
       - type: patch
         path: qdigidoc4/common-CMakeLists.patch
-        # qdigidoc4 saves files in $TMPDIR before opening them. Since this is inaccessible, we provide a wrapper script,
-        # as advised here: https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access
+      # qdigidoc4 saves files in $TMPDIR before opening them. Since this is inaccessible, we provide a wrapper script,
+      # as advised here: https://docs.flatpak.org/en/latest/sandbox-permissions.html#filesystem-access
       - type: script
         dest-filename: run.sh
         commands:
