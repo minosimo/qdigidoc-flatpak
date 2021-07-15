@@ -162,6 +162,8 @@ modules:
         path: qdigidoc4/client-CMakeLists.patch
       - type: patch
         path: qdigidoc4/qdigidoc4-desktop.patch
+      - type: file
+        path: ee.ria.qdigidoc4.metainfo.xml
       # See guide for building in a sandboxed environment:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
@@ -197,3 +199,5 @@ modules:
           - env TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" qdigidoc4 "$@"
     post-install:
       - install run.sh /app/bin
+      - install -Dp -m 644 ee.ria.qdigidoc4.metainfo.xml /app/share/metainfo/ee.ria.qdigidoc4.metainfo.xml
+      - ln -s /app/share/locale/et/LC_MESSAGES/nautilus-qdigidoc.mo /app/share/locale/et/nautilus-qdigidoc.mo

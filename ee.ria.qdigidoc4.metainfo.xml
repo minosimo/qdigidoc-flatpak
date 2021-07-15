@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>ee.ria.qdigidoc4</id>
+  <name>DigiDoc4 Client</name>
+  <summary>Estonian ID-card desktop application</summary>
+  <content_rating type="oars-1.1" />
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>LGPL-2.1-or-later</project_license>
+
+  <url type="homepage">https://github.com/open-eid/DigiDoc4-Client</url>
+  <url type="bugtracker">https://github.com/open-eid/DigiDoc4-Client/issues</url>
+
+  <translation type="gettext">nautilus-qdigidoc</translation>
+  
+  <description>
+    <p>
+      DigiDoc4 Client is a part of Estonian national ID-card software developed by governmental institution - Estonian Information System Authority.
+    </p>
+    <p>
+      DigiDoc4 Client is a program that can be used to sign digitally with ID-card, Mobile-ID and Smart-ID, check the validity of digital signatures, open and save documents inside the signature container, encrypt and decrypt files and review personal information stored on the ID-card. Digitally signed containers are files with .ddoc, .bdoc or .asice extensions, encrypted/decrypted files are with .cdoc extension.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">ee.ria.qdigidoc4.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://www.ria.ee/sites/default/files/styles/1024x/public/news-cover-images/digidoc-4.png?itok=XTy6Lh1E</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>qdigidoc4</binary>
+    <binary>chrome-token-signing</binary>
+  </provides>
+  <releases>
+    <release version="4.2.9" date="2021-07-14">
+      <description>
+        <ul>
+          <li>Code, Text and translation improvements and updates</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>
