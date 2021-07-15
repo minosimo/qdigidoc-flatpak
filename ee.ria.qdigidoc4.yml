@@ -201,3 +201,4 @@ modules:
       - install run.sh /app/bin
       - install -Dp -m 644 ee.ria.qdigidoc4.metainfo.xml /app/share/metainfo/ee.ria.qdigidoc4.metainfo.xml
       - ln -s /app/share/locale/et/LC_MESSAGES/nautilus-qdigidoc.mo /app/share/locale/et/nautilus-qdigidoc.mo
+      - ln -s /app/share/locale/ru/LC_MESSAGES/nautilus-qdigidoc.mo /app/share/locale/ru/nautilus-qdigidoc.mo
