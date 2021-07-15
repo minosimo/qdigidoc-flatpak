@@ -5,8 +5,8 @@ runtime-version: '5.15'
 sdk: org.kde.Sdk
 
 finish-args:
-  # User needs to be able to store & access signed files
-  - --filesystem=home
+  # libdigidocpp stores tsl files here
+  - --persist=.digidocpp
   # Network is needed for some parts of the application's functionality
   - --share=network
   # Wayland
