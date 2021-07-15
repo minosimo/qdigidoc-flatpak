@@ -25,6 +25,15 @@ modules:
         url: https://github.com/apache/xerces-c/archive/refs/tags/v3.2.3.tar.gz
         sha256: a7cf582d618c048ef6a4684457a641940179c446e5f02c81f582f5952755a76a
 
+  - name: xalan-c
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/apache/xalan-c/releases/download/Xalan-C_1_12_0/xalan_c-1.12.tar.gz
+        sha256: ee7d4b0b08c5676f5e586c7154d94a5b32b299ac3cbb946e24c4375a25552da7
+      - type: patch
+        path: xalan-c/CMakeLists.patch
+
   - name: xsd
     buildsystem: simple
     build-commands:
@@ -41,6 +50,9 @@ modules:
 
   - name: xml-security-c
     buildsystem: autotools
+    config-opts:
+      # TODO: we actually do have xalan in the build tree, so we could use it?
+      - --with-xalan=no
     sources:
       - type: archive
         url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.2.tar.gz
@@ -59,8 +71,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.6/libdigidocpp-3.14.6.tar.gz
-        sha256: cc33312722ff4f7717aea80c4f5e726650a8ce0c8eb799cdadea2db6eba21879
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.7/libdigidocpp-3.14.7.tar.gz
+        sha256: 41d72d5b6f93f243cd509bf7d295d9fea7e7c35521aba8127128d423e6d931f6
 
   - name: openldap
     buildsystem: autotools
