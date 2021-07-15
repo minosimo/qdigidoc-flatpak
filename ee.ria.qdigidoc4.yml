@@ -43,8 +43,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/apache/santuario-cpp/archive/refs/tags/2.0.2.tar.gz
-        sha256: 914d1b7fa2176b423363e65a496cf70004662693f1696b562d16aaa4eb4c2b91
+        url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.2.tar.gz
+        sha256: c303a2b08cb9ca0f5594adcbb83829b1e793175d7114a82f7d78def8bb2e30df
 
   - name: xxd
     buildsystem: simple
