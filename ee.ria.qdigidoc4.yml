@@ -28,7 +28,7 @@ modules:
   - name: xsd
     buildsystem: simple
     build-commands:
-      - make
+      - make -j
       - make install install_prefix=/app
     sources:
       - type: archive
