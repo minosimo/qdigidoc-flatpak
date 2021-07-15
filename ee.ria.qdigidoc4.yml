@@ -22,8 +22,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://downloads.apache.org//xerces/c/3/sources/xerces-c-3.2.3.tar.gz
-        sha256: fb96fc49b1fb892d1e64e53a6ada8accf6f0e6d30ce0937956ec68d39bd72c7e
+        url: https://github.com/apache/xerces-c/archive/refs/tags/v3.2.3.tar.gz
+        sha256: a7cf582d618c048ef6a4684457a641940179c446e5f02c81f582f5952755a76a
 
   - name: xsd
     buildsystem: simple
@@ -43,8 +43,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.2.tar.gz
-        sha256: c303a2b08cb9ca0f5594adcbb83829b1e793175d7114a82f7d78def8bb2e30df
+        url: https://github.com/apache/santuario-cpp/archive/refs/tags/2.0.2.tar.gz
+        sha256: 914d1b7fa2176b423363e65a496cf70004662693f1696b562d16aaa4eb4c2b91
 
   - name: xxd
     buildsystem: simple
