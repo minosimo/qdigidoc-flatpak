@@ -17,6 +17,15 @@ finish-args:
   # Smartcard
   - --socket=pcsc
   - --device=all
+
+cleanup:
+  - /include
+  - /lib/cmake
+  - /lib/pkgconfig
+  - /etc/bash_completion.d
+  - /share/doc
+  - /share/man
+
 modules:
   - name: xerces-c
     buildsystem: cmake
@@ -62,6 +71,8 @@ modules:
     buildsystem: simple
     build-commands:
       - cd src && make installtools prefix=/app
+    cleanup:
+      - /share/vim
     sources:
       - type: archive
         url: https://github.com/vim/vim/archive/refs/tags/v8.2.2929.tar.gz
