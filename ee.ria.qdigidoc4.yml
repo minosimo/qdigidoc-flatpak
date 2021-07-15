@@ -138,8 +138,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.8/qdigidoc4-4.2.8.tar.gz
-        sha256: e5f4b5c5e54d0b8fe2d5f5556f1de158c61d5c5ede028c3fc7241416f2ea8c01
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.9/qdigidoc4-4.2.9.tar.gz
+        sha256: f9afe5a46e67ab4013287efea85ddc5668b8830b4832edde37a15123771d0de6
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch

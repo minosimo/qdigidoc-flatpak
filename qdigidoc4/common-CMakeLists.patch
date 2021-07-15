@@ -1,8 +1,8 @@
 diff --git a/common/CMakeLists.txt b/common/CMakeLists.txt
-index 94bf735..5a6c954 100644
+index b091756..952d2c3 100644
 --- a/common/CMakeLists.txt
 +++ b/common/CMakeLists.txt
-@@ -34,13 +34,7 @@ if( CONFIG_URL )
+@@ -37,13 +37,7 @@ if( CONFIG_URL )
  	if( LAST_CHECK_DAYS )
  		set_source_files_properties( Configuration.cpp PROPERTIES COMPILE_DEFINITIONS "LAST_CHECK_DAYS=${LAST_CHECK_DAYS}" )
  	endif()
