@@ -65,8 +65,8 @@ modules:
       - --with-xalan=no
     sources:
       - type: archive
-        url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.2.tar.gz
-        sha256: c303a2b08cb9ca0f5594adcbb83829b1e793175d7114a82f7d78def8bb2e30df
+        url: https://downloads.apache.org/santuario/c-library/xml-security-c-2.0.4.tar.gz
+        sha256: a78da6720f6c2ba14100d2426131e0d33eac5a2dba5cc11bdd04974b7eb89003
 
   - name: xxd
     buildsystem: simple
@@ -83,8 +83,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.7/libdigidocpp-3.14.7.tar.gz
-        sha256: 41d72d5b6f93f243cd509bf7d295d9fea7e7c35521aba8127128d423e6d931f6
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.8/libdigidocpp-3.14.8.tar.gz
+        sha256: 5398b9200c89178df9f6ae8cea641e984b86efe8a73d8217a8bcbc187bf87648
 
   - name: openldap
     buildsystem: autotools
@@ -155,8 +155,8 @@ modules:
     subdir: host-linux
     sources:
       - type: archive
-        url:  https://github.com/open-eid/chrome-token-signing/archive/refs/tags/v1.1.4.tar.gz
-        sha256: 1a7bbde2627461656a4385e19cc771bf137c600f32912b6eb635c05681c4f104
+        url:  https://github.com/open-eid/chrome-token-signing/archive/refs/tags/v1.1.5.tar.gz
+        sha256: 27fb5ecf0357d134369a714737b23dce94b6e5cc6cb882cde3013c4854bc47f3
       - type: patch
         path: chrome-token-signing/chrome-token-signing.pro.patch
       - type: patch
@@ -166,8 +166,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.9/qdigidoc4-4.2.9.tar.gz
-        sha256: f9afe5a46e67ab4013287efea85ddc5668b8830b4832edde37a15123771d0de6
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.11/qdigidoc4_4.2.11.110.orig.tar.xz
+        sha256: c21a8d524359d36e6bdd89b77fe0e0554027965a797267962a3cb43f21684d7a
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch
@@ -178,27 +178,33 @@ modules:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-        sha256: c8a544f078cd6521e14ecbbb11843fa08b755eb198cc2d0f7da3335e4638e942
-        dest-filename: client/eu-lotl.xml
+        sha256: 6d8a4a5d90c787e2c3ee5c89bbc4f0cb83ef65b5ff6535af05b8aa2350dd3005
+        dest: client
+        dest-filename: eu-lotl.xml
       - type: file
         url: https://sr.riik.ee/tsl/estonian-tsl.xml
-        sha256: 48d130cd28041b50c472f9887cc82ada945928205bdd841251189382077b76f2
-        dest-filename: client/EE.xml
+        sha256: fd4468149914d20692453a19eecdc70b9e5e4a84485cb298d27a054443337909
+        dest: client
+        dest-filename: EE.xml
       - type: file
         path: qdigidoc4/TSL.qrc
-        dest-filename: client/TSL.qrc
+        dest: client
+        dest-filename: TSL.qrc
       - type: file
         url: https://id.eesti.ee/config.json
-        sha256: ebb9ecd8e578003fc8ca6a83cc38c914dea9a0176158358925a457c5a7a837b9
-        dest-filename: common/config.json
+        sha256: 6d0cb16de0cc3802ec44522e4d593b2937a7b52743c19a3408ce7a9b896e3c6e
+        dest: common
+        dest-filename: config.json
       - type: file
         url: https://id.eesti.ee/config.rsa
-        sha256: 70d1fa9e343f701950cbb114d89624447f3b5a22a2f294338ca55555d12bbcf7
-        dest-filename: common/config.rsa
+        sha256: 5f2533dc31f729722265560d7fa8aa70784a52a11f002043c8ece622a32b2a44
+        dest: common
+        dest-filename: config.rsa
       - type: file
         url: https://id.eesti.ee/config.pub
         sha256: 29e05778ce98b5197963266bdc292af80a9406cccc3fe5ef7ca2b75b1beb34eb
-        dest-filename: common/config.pub
+        dest: common
+        dest-filename: config.pub
       - type: patch
         path: qdigidoc4/common-CMakeLists.patch
       # qdigidoc4 saves files in $TMPDIR before opening them. Since this is inaccessible, we provide a wrapper script,
