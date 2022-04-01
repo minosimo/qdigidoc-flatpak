@@ -3,6 +3,7 @@ command: run.sh
 runtime: org.kde.Platform
 runtime-version: '5.15'
 sdk: org.kde.Sdk
+rename-icon: qdigidoc4
 
 finish-args:
   # libdigidocpp stores tsl files here
@@ -171,8 +172,6 @@ modules:
         path: qdigidoc4/QPKCS11.patch
       - type: patch
         path: qdigidoc4/client-CMakeLists.patch
-      - type: patch
-        path: qdigidoc4/qdigidoc4-desktop.patch
       - type: file
         path: ee.ria.qdigidoc4.metainfo.xml
       # See guide for building in a sandboxed environment:
@@ -209,7 +208,10 @@ modules:
         commands:
           - env TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" qdigidoc4 "$@"
     post-install:
-      - install run.sh /app/bin
-      - install -Dp -m 644 ee.ria.qdigidoc4.metainfo.xml /app/share/metainfo/ee.ria.qdigidoc4.metainfo.xml
-      - ln -s /app/share/locale/et/LC_MESSAGES/nautilus-qdigidoc.mo /app/share/locale/et/nautilus-qdigidoc.mo
-      - ln -s /app/share/locale/ru/LC_MESSAGES/nautilus-qdigidoc.mo /app/share/locale/ru/nautilus-qdigidoc.mo
+      - install run.sh "${FLATPAK_DEST}/bin/run.sh"
+      - install -Dm644 ee.ria.qdigidoc4.metainfo.xml $FLATPAK_DEST/share/metainfo/ee.ria.qdigidoc4.metainfo.xml
+      - ln -s $FLATPAK_DEST/share/locale/et/LC_MESSAGES/nautilus-qdigidoc.mo $FLATPAK_DEST/share/locale/et/nautilus-qdigidoc.mo
+      - ln -s $FLATPAK_DEST/share/locale/ru/LC_MESSAGES/nautilus-qdigidoc.mo $FLATPAK_DEST/share/locale/ru/nautilus-qdigidoc.mo
+      - mv $FLATPAK_DEST/share/applications/qdigidoc4.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
+      - desktop-file-edit --set-icon=${FLATPAK_ID} --set-key=Exec --set-value="run.sh" /app/share/applications/${FLATPAK_ID}.desktop
+      - mv $FLATPAK_DEST/share/mime/packages/qdigidoc4.xml $FLATPAK_DEST/share/mime/packages/$FLATPAK_ID.xml
