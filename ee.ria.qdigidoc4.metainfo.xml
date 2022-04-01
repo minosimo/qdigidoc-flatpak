@@ -33,6 +33,13 @@
     <binary>chrome-token-signing</binary>
   </provides>
   <releases>
+    <release version="4.2.11" date="2022-03-15">
+      <description>
+        <ul>
+          <li>Code, Text and translation improvements and updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.2.9" date="2021-07-14">
       <description>
         <ul>
