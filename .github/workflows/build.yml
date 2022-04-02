@@ -23,7 +23,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: qdigidoc-x86_64
-          path: qidigidoc.flatpak
+      - run: mv qdigidoc-x86_64 qdigidoc.flatpak
       - uses: softprops/action-gh-release@v1
         with:
           draft: true
