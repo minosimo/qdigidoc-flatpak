@@ -17,6 +17,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: qdigidoc.flatpak
+        path: qdigidoc.flatpak
   release:
     if: startsWith(github.ref, 'refs/tags/')
     name: "Release"
