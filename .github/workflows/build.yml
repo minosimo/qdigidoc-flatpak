@@ -1,10 +1,7 @@
-on:
-  push:
-    branches: [master]
-  pull_request:
+on: workflow_dispatch
 name: Build Flatpak
 jobs:
-  flatpak:
+  build:
     name: "Flatpak"
     runs-on: ubuntu-latest
     container:
@@ -17,3 +14,23 @@ jobs:
         bundle: qdigidoc.flatpak
         manifest-path: ee.ria.qdigidoc4.yml
         cache-key: flatpak-builder-${{ github.sha }}
+    - uses: actions/upload-artifact@v3
+      with:
+        name: qdigidoc.flatpak
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    name: "Release"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: qidigidoc.flatpak
+      - uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          body: |
+            ```
+            flatpak install qdigidoc.flatpak
+            ```
+          files: qidigidoc.flatpak
+
