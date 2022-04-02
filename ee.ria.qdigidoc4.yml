@@ -43,20 +43,19 @@ modules:
         sha256: ee7d4b0b08c5676f5e586c7154d94a5b32b299ac3cbb946e24c4375a25552da7
       - type: patch
         path: xalan-c/CMakeLists.patch
-
+  
+  # We use prebuilt xsd since its build seems to take a lot of memory and time. Git history has a
+  # non-prebuilt version of the xsd module if needed.
   - name: xsd
-    buildsystem: simple
-    build-commands:
-      - make -j
-      - make install install_prefix=/app
     sources:
       - type: archive
-        url: https://www.codesynthesis.com/download/xsd/4.0/xsd-4.0.0+dep.tar.bz2
-        sha256: eca52a9c8f52cdbe2ae4e364e4a909503493a0d51ea388fc6c9734565a859817
-      # The Debian repo has many more patches:
-      # https://sources.debian.org/src/xsd/4.0.0-8.1/debian/patches/
-      - type: patch
-        path: xsd/missing-include.patch
+        url: https://www.codesynthesis.com/download/xsd/4.0/linux-gnu/x86_64/xsd-4.0.0-x86_64-linux-gnu.tar.bz2
+        sha256: d01060cbf4b3a1e462a5c5ad1a5a6773b541766dbbb98e50c9efb8f2a2dd55b7
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 bin/xsd /app/bin/xsd
+      - cp -r libxsd/xsd /app/include
+      - chmod -R 644 /app/include/xsd
 
   - name: xml-security-c
     buildsystem: autotools
