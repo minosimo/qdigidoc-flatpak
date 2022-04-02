@@ -1,8 +1,8 @@
 on: workflow_dispatch
-name: Build Flatpak
+name: Build and release
 jobs:
   build:
-    name: "Flatpak"
+    name: "Build"
     runs-on: ubuntu-latest
     container:
       image: bilelmoussaoui/flatpak-github-actions:kde-5.15
