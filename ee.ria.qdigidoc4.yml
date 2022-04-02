@@ -51,8 +51,9 @@ modules:
         sha256: d01060cbf4b3a1e462a5c5ad1a5a6773b541766dbbb98e50c9efb8f2a2dd55b7
     buildsystem: simple
     build-commands:
-      - install -Dm755 bin/xsd /app/bin
-      - install -Dm644 libxsd/xsd /app/include
+      - install -Dm755 bin/xsd /app/bin/xsd
+      - cp -r libxsd/xsd /app/include
+      - chmod -R 644 /app/include/xsd
 
   - name: xml-security-c
     buildsystem: autotools
