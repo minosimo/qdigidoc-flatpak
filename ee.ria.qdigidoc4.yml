@@ -52,6 +52,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 bin/xsd /app/bin
+      - install -Dm644 libxsd/xsd /app/include
 
   - name: xml-security-c
     buildsystem: autotools
