@@ -44,6 +44,8 @@ modules:
       - type: patch
         path: xalan-c/CMakeLists.patch
   
+  # We use prebuilt xsd since its build seems to take a lot of memory and time. Git history has a
+  # non-prebuilt version of the xsd module if needed.
   - name: xsd
     sources:
       - type: archive
