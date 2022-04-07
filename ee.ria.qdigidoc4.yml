@@ -136,8 +136,8 @@ modules:
       - /lib/libpcsclite.so
     sources:
       - type: archive
-        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.1.tar.gz
-        sha256: 1eaad042a8a8f9d398bf3fc27a35e516e4f0b90437a0e11a46d280ddd9c5848d
+        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.5.tar.gz
+        sha256: 4c8cd8fa86004fd3c2fe252f2505d607f1752133d2ff1841f7e8b54fb94b4f73
 
   - name: opensc
     cleanup:
