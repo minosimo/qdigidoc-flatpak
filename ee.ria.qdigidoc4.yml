@@ -100,8 +100,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.4.tgz
-        sha256: 61c03c078d70cd859e504fa9555d7d52426eed4b29e6a39e828afc213e4fb356
+        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.1.tgz
+        sha256: 9d576ea6962d7db8a2e2808574e8c257c15aef55f403a1fb5a0faf35de70e6f3
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -117,8 +117,8 @@ modules:
       - /include
     sources:
       - type: archive
-        url: https://github.com/libusb/libusb/archive/v1.0.24.tar.gz
-        sha256: b7724c272dfc5713dce88ff717efd60f021ca5b7c8e30f08ebb2c42d2eea08ae
+        url: https://github.com/libusb/libusb/archive/v1.0.25.tar.gz
+        sha256: f9c4b7dad27a6196ca9ec3c6ec7fa446194342de326c71e030eb2c480895e169
     post-install:
       - install -Dm644 COPYING /app/share/licenses/libusb/COPYING
 
@@ -144,8 +144,8 @@ modules:
       - /share/applications/org.opensc.notify.desktop
     sources:
       - type: archive
-        url: https://github.com/OpenSC/OpenSC/releases/download/0.21.0/opensc-0.21.0.tar.gz
-        sha256: 2bfbbb1dcb4b8d8d75685a3e95c30798fb6411d4efab3690fd89d2cb25f3325e
+        url: https://github.com/OpenSC/OpenSC/releases/download/0.22.0/opensc-0.22.0.tar.gz
+        sha256: 8d4e5347195ebea332be585df61dcc470331c26969e4b0447c851fb0844c7186
 
   # This can be called from the browser extension to sign documents
   - name: chrome-token-signing
