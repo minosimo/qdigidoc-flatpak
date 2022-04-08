@@ -22,4 +22,4 @@ ln -s /var/lib/flatpak/app/ee.ria.qdigidoc4/current/active/files/lib/mozilla/nat
 ```
 
 ## Building the Flatpak
-See [build.md](./build.md).
+See [build.md](./build.md)
