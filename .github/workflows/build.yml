@@ -27,15 +27,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
-        with:
-          name: qdigidoc-x86_64
       - run: mv qdigidoc-x86_64 qdigidoc.flatpak
       - uses: softprops/action-gh-release@v1
         with:
           draft: true
           body: |
+            Download the flatpak that matches your distro (or "other" if there is no matching
+            distro) and install it with the following command:
             ```
-            flatpak install qdigidoc.flatpak
+            flatpak install qdigidoc-*.flatpak
             ```
-          files: qidigidoc.flatpak
+          files: |
+            qdigidoc-fedora-35-x86_64/qidigidoc-fedora-35.flatpak
+            qdigidoc-other-x86_64/qidigidoc-other.flatpak
 
