@@ -1,4 +1,4 @@
-# DigiDoc4
+# DigiDoc4 Flatpak
 DigiDoc4 is an application for digitally signing and encrypting documents.
 
 This repo hosts the Flatpak wrapper for [DigiDoc4](https://github.com/open-eid/DigiDoc4-Client/).
