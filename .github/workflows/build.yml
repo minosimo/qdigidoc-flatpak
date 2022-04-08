@@ -19,7 +19,7 @@ jobs:
       with:
         bundle: qdigidoc-${{ matrix.distro }}.flatpak
         manifest-path: ee.ria.qdigidoc4.yml
-        cache-key: flatpak-builder-${{ github.sha }}
+        cache-key: flatpak-builder-${{ matrix.distro }}-${{ github.sha }}
   release:
     if: startsWith(github.ref, 'refs/tags/')
     needs: build
@@ -27,7 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3
-      - run: mv qdigidoc-x86_64 qdigidoc.flatpak
       - uses: softprops/action-gh-release@v1
         with:
           draft: true
