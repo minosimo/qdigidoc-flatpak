@@ -22,3 +22,4 @@ diff -up ./src/PCSC/pcsclite.h.readers_32 ./src/PCSC/pcsclite.h
 +#define PCSCLITE_MAX_READERS_CONTEXTS			48
  
  #define MAX_READERNAME			128
+ 
