@@ -12,7 +12,7 @@ jobs:
         distro: [fedora-35, other]
     steps:
     - uses: actions/checkout@v2
-    - run: configure-manifest.sh
+    - run: ./configure-manifest.sh
       env:
         DISTRO: ${{ matrix.distro }}
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
