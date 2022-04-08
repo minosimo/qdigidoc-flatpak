@@ -7,11 +7,17 @@ jobs:
     container:
       image: bilelmoussaoui/flatpak-github-actions:kde-5.15
       options: --privileged
+    strategy:
+      matrix:
+        distro: [fedora-35, other]
     steps:
     - uses: actions/checkout@v2
+    - run: configure-manifest.sh
+      env:
+        DISTRO: ${{ matrix.distro }}
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       with:
-        bundle: qdigidoc.flatpak
+        bundle: qdigidoc-${{ matrix.distro }}.flatpak
         manifest-path: ee.ria.qdigidoc4.yml
         cache-key: flatpak-builder-${{ github.sha }}
   release:
