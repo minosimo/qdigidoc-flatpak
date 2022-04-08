@@ -110,7 +110,6 @@ modules:
   - name: libusb
     config-opts:
       - --disable-static
-      - --disable-udev
     cleanup:
       - /lib/*.la
       - /lib/pkgconfig
@@ -124,16 +123,15 @@ modules:
 
   - name: pcsc-lite
     config-opts:
-      - --enable-libusb
       - --disable-libudev
       - --disable-libsystemd
       - --without-systemdsystemunitdir
+      - --disable-serial
+      - --disable-usb
+      - --disable-documentation
     post-install:
       - rm /app/sbin/pcscd
       - rmdir /app/sbin || true
-    cleanup:
-      - /lib/libpcscspy.so
-      - /lib/libpcsclite.so
     sources:
       - type: archive
         url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.5.tar.gz
