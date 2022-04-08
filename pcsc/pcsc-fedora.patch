@@ -1,0 +1,24 @@
+https://github.com/LudovicRousseau/PCSC/issues/118#issuecomment-1037280866
+diff -up ./src/PCSC/pcsclite.h.in.readers_32 ./src/PCSC/pcsclite.h.in
+--- ./src/PCSC/pcsclite.h.in.readers_32	2018-08-20 16:02:17.708302410 -0700
++++ ./src/PCSC/pcsclite.h.in	2018-08-20 16:02:49.462500967 -0700
+@@ -281,7 +281,7 @@ extern const SCARD_IO_REQUEST g_rgSCardT
+ 
+ #define PCSCLITE_VERSION_NUMBER		"@VERSION@"	/**< Current version */
+ /** Maximum readers context (a slot is count as a reader) */
+-#define PCSCLITE_MAX_READERS_CONTEXTS			16
++#define PCSCLITE_MAX_READERS_CONTEXTS			48
+ 
+ #define MAX_READERNAME			128
+ 
+diff -up ./src/PCSC/pcsclite.h.readers_32 ./src/PCSC/pcsclite.h
+--- ./src/PCSC/pcsclite.h.readers_32	2018-08-20 16:02:30.993385481 -0700
++++ ./src/PCSC/pcsclite.h	2018-08-20 16:03:00.061567242 -0700
+@@ -281,7 +281,7 @@ extern const SCARD_IO_REQUEST g_rgSCardT
+ 
+ #define PCSCLITE_VERSION_NUMBER		"1.9.5"	/**< Current version */
+ /** Maximum readers context (a slot is count as a reader) */
+-#define PCSCLITE_MAX_READERS_CONTEXTS			16
++#define PCSCLITE_MAX_READERS_CONTEXTS			48
+ 
+ #define MAX_READERNAME			128
