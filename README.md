@@ -21,5 +21,16 @@ mkdir -p ~/.mozilla/native-messaging-hosts/
 ln -s /var/lib/flatpak/app/ee.ria.qdigidoc4/current/active/files/lib/mozilla/native-messaging-hosts/ee.ria.esteid.json ~/.mozilla/native-messaging-hosts/
 ```
 
+## Smartcard readers
+If your smartcard reader is not recognized, please file an issue and provide your Linux distribution
+name and version. The Flatpak pcsc integration depends on the daemon running on the host, which can
+vary between distributions.
+
+Ideally, the output from the following commands would be very helpful:
+```sh
+cat /etc/os-release | head -n 4
+pcscd --version | head -n 1
+```
+
 ## Building the Flatpak
 See [build.md](./build.md)
