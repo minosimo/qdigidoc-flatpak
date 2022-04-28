@@ -1,17 +1,4 @@
 https://github.com/open-eid/libdigidocpp/commit/42a8cfd834c10bdd206fe784a13217df222b1c8e.patch
-diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
-index fa3dd2a4c..e94740623 100644
---- a/.github/workflows/build.yml
-+++ b/.github/workflows/build.yml
-@@ -165,7 +165,7 @@ jobs:
-           "zlib:x64-windows-v${{ matrix.toolset }}"
-           "boost-test:x86-windows-v${{ matrix.toolset }}"
-           "boost-test:x64-windows-v${{ matrix.toolset }}"
--        vcpkgGitCommitId: 30465138ef7facf1d4c1aa8a06dd62ceb71cc2eb
-+        vcpkgGitCommitId: 291b84e651bc21d90088394139097f9a5396cc00
-     - name: Install dependencies
-       run: choco install doxygen.install swig -y > $null
-     - name: Build xsd
 diff --git a/build-library.sh b/build-library.sh
 index 47b9b0375..84f626f48 100755
 --- a/build-library.sh
