@@ -84,6 +84,10 @@ modules:
       - type: archive
         url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.8/libdigidocpp-3.14.8.tar.gz
         sha256: 5398b9200c89178df9f6ae8cea641e984b86efe8a73d8217a8bcbc187bf87648
+      # Patch only needed until release is made
+      # See: https://github.com/open-eid/DigiDoc4-Client/issues/1053
+      - type: patch
+        path: libdigidocpp/42a8cfd834c10bdd206fe784a13217df222b1c8e.patch
 
   - name: openldap
     buildsystem: autotools
