@@ -82,12 +82,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.8/libdigidocpp-3.14.8.tar.gz
-        sha256: 5398b9200c89178df9f6ae8cea641e984b86efe8a73d8217a8bcbc187bf87648
-      # Patch only needed until release is made
-      # See: https://github.com/open-eid/DigiDoc4-Client/issues/1053
-      - type: patch
-        path: libdigidocpp/42a8cfd834c10bdd206fe784a13217df222b1c8e.patch
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.10/libdigidocpp-3.14.10.tar.gz
+        sha256: 9fff91e21a3541c7eddd848a135da8c598db14702c503c282c536e9391977f97
 
   - name: openldap
     buildsystem: autotools
@@ -104,8 +100,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.1.tgz
-        sha256: 9d576ea6962d7db8a2e2808574e8c257c15aef55f403a1fb5a0faf35de70e6f3
+        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.3.tgz
+        sha256: d2a2a1d71df3d77396b1c16ad7502e674df446e06072b0e5a4e941c3d06c0d46
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -120,8 +116,8 @@ modules:
       - /include
     sources:
       - type: archive
-        url: https://github.com/libusb/libusb/archive/v1.0.25.tar.gz
-        sha256: f9c4b7dad27a6196ca9ec3c6ec7fa446194342de326c71e030eb2c480895e169
+        url: https://github.com/libusb/libusb/archive/v1.0.26.tar.gz
+        sha256: a09bff99c74e03e582aa30759cada218ea8fa03580517e52d463c59c0b25e240
     post-install:
       - install -Dm644 COPYING /app/share/licenses/libusb/COPYING
 
@@ -138,8 +134,8 @@ modules:
       - rmdir /app/sbin || true
     sources:
       - type: archive
-        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.5.tar.gz
-        sha256: 4c8cd8fa86004fd3c2fe252f2505d607f1752133d2ff1841f7e8b54fb94b4f73
+        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.8.tar.gz
+        sha256: 6b1065eb97490f5262428e340dc9fc30035c98757155c364403f38a68622db78
       - type: patch
         path: pcsc/pcsc-fedora.patch
 
@@ -169,8 +165,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.11/qdigidoc4_4.2.11.110.orig.tar.xz
-        sha256: c21a8d524359d36e6bdd89b77fe0e0554027965a797267962a3cb43f21684d7a
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.12/qdigidoc4_4.2.12.118.orig.tar.xz
+        sha256: a50dc9b68fd4789d8327ca44406183558b096dd9157642b66f438edbde6f8cab
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch
@@ -181,7 +177,7 @@ modules:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-        sha256: 6d8a4a5d90c787e2c3ee5c89bbc4f0cb83ef65b5ff6535af05b8aa2350dd3005
+        sha256: 3d94a1630a3de7f82e8842c70ff88379ed437df6228835e6fc0980872c3c81b7
         dest: client
         dest-filename: eu-lotl.xml
       - type: file
@@ -195,12 +191,12 @@ modules:
         dest-filename: TSL.qrc
       - type: file
         url: https://id.eesti.ee/config.json
-        sha256: 6d0cb16de0cc3802ec44522e4d593b2937a7b52743c19a3408ce7a9b896e3c6e
+        sha256: d316d6a030fc06ddcd0d2cb999c7c444eb2b5ffa6f891d3e941fbd55cdedebd2
         dest: common
         dest-filename: config.json
       - type: file
         url: https://id.eesti.ee/config.rsa
-        sha256: 5f2533dc31f729722265560d7fa8aa70784a52a11f002043c8ece622a32b2a44
+        sha256: da94974ac42df84294ebe9f5c773f78ae5f1575f1b82b43709941884ad8afe9d
         dest: common
         dest-filename: config.rsa
       - type: file

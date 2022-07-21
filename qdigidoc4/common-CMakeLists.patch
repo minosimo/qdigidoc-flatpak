@@ -2,7 +2,7 @@ diff --git a/common/CMakeLists.txt b/common/CMakeLists.txt
 index b091756..952d2c3 100644
 --- a/common/CMakeLists.txt
 +++ b/common/CMakeLists.txt
-@@ -37,13 +37,7 @@ if( CONFIG_URL )
+@@ -40,13 +40,7 @@
  	if( LAST_CHECK_DAYS )
  		set_source_files_properties( Configuration.cpp PROPERTIES COMPILE_DEFINITIONS "LAST_CHECK_DAYS=${LAST_CHECK_DAYS}" )
  	endif()
@@ -12,8 +12,8 @@ index b091756..952d2c3 100644
 -	string( REPLACE ".json" ".pub" PUB_URL ${CONFIG_URL} )
 -	file( DOWNLOAD ${PUB_URL} ${CMAKE_CURRENT_BINARY_DIR}/config.pub )
 -	configure_file( config.qrc config.qrc COPYONLY )
--	qt5_add_resources( CONFIG_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/config.qrc )
-+	qt5_add_resources( CONFIG_SOURCES config.qrc )
+-	qt_add_resources(CONFIG_SOURCES ${CMAKE_CURRENT_BINARY_DIR}/config.qrc)
++	qt_add_resources(CONFIG_SOURCES config.qrc)
  	target_compile_definitions(qdigidoccommon PUBLIC CONFIG_URL="${CONFIG_URL}")
  	target_sources(qdigidoccommon PRIVATE ${CONFIG_SOURCES} Configuration.cpp )
  endif()
