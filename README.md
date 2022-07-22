@@ -32,5 +32,14 @@ cat /etc/os-release | head -n 4
 pcscd --version | head -n 1
 ```
 
+## Making a release
+- Update modules in [ee.ria.qdigidoc4.yml](./ee.ria.qdigidoc4.yml). Check the changelogs of the
+  modules to ensure the build tree is still correct.
+- Update [ee.ria.qdigidoc4.metainfo.xml](./ee.ria.qdigidoc4.metainfo.xml)
+- Tag the release
+- Run [the Github workflow action](https://github.com/oskarkook/qdigidoc-flatpak/actions/workflows/build.yml)
+  on the tag
+- Finalize the release and publish on Github
+
 ## Building the Flatpak
 See [build.md](./build.md)
