@@ -27,7 +27,7 @@ overwrite the manifest, depending on the `DISTRO` environment variable, which mu
 manually, e.g:
 
 ```sh
-DISTRO=fedora-35 ./configure-manifest.sh
+DISTRO=fedora ./configure-manifest.sh
 ```
 
 You can then run your build normally with the resulting manifest.

@@ -9,7 +9,7 @@ jobs:
       options: --privileged
     strategy:
       matrix:
-        distro: [fedora-35, other]
+        distro: [fedora, other]
     steps:
     - uses: actions/checkout@v2
     - run: ./configure-manifest.sh
@@ -37,6 +37,6 @@ jobs:
             flatpak install qdigidoc-*.flatpak
             ```
           files: |
-            qdigidoc-fedora-35-x86_64/qidigidoc-fedora-35.flatpak
+            qdigidoc-fedora-x86_64/qidigidoc-fedora.flatpak
             qdigidoc-other-x86_64/qidigidoc-other.flatpak
 
