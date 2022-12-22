@@ -2,9 +2,9 @@ diff --git a/common/CMakeLists.txt b/common/CMakeLists.txt
 index b091756..952d2c3 100644
 --- a/common/CMakeLists.txt
 +++ b/common/CMakeLists.txt
-@@ -40,13 +40,7 @@
+@@ -48,13 +48,7 @@ if( CONFIG_URL )
  	if( LAST_CHECK_DAYS )
- 		set_source_files_properties( Configuration.cpp PROPERTIES COMPILE_DEFINITIONS "LAST_CHECK_DAYS=${LAST_CHECK_DAYS}" )
+         set_source_files_properties(Configuration.cpp PROPERTIES COMPILE_DEFINITIONS LAST_CHECK_DAYS=${LAST_CHECK_DAYS})
  	endif()
 -	file( DOWNLOAD ${CONFIG_URL} ${CMAKE_CURRENT_BINARY_DIR}/config.json )
 -	string( REPLACE ".json" ".rsa" RSA_URL ${CONFIG_URL} )

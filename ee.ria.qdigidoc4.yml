@@ -32,8 +32,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/apache/xerces-c/archive/refs/tags/v3.2.3.tar.gz
-        sha256: a7cf582d618c048ef6a4684457a641940179c446e5f02c81f582f5952755a76a
+        url: https://github.com/apache/xerces-c/archive/refs/tags/v3.2.4.tar.gz
+        sha256: 8dfaa30d6a641bda113625ef65e43c433e8ffd94fadd3b8d39dfe6faf450f26d
 
   - name: xalan-c
     buildsystem: cmake
@@ -82,8 +82,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.10/libdigidocpp-3.14.10.tar.gz
-        sha256: 9fff91e21a3541c7eddd848a135da8c598db14702c503c282c536e9391977f97
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.11/libdigidocpp-3.14.11.tar.gz
+        sha256: e5060a1f0441e67724e72aae917fd403e3378c5941be443f7a407b245218e6d2
 
   - name: openldap
     buildsystem: autotools
@@ -134,8 +134,8 @@ modules:
       - rmdir /app/sbin || true
     sources:
       - type: archive
-        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.8.tar.gz
-        sha256: 6b1065eb97490f5262428e340dc9fc30035c98757155c364403f38a68622db78
+        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.9.tar.gz
+        sha256: 856a1daed9a5ae1ac265c75ce9f81743e66a972e5be5a1d3a2196ed23f75ea26
       - type: patch
         path: pcsc/pcsc-fedora.patch
 
@@ -144,15 +144,15 @@ modules:
       - /share/applications/org.opensc.notify.desktop
     sources:
       - type: archive
-        url: https://github.com/OpenSC/OpenSC/releases/download/0.22.0/opensc-0.22.0.tar.gz
-        sha256: 8d4e5347195ebea332be585df61dcc470331c26969e4b0447c851fb0844c7186
+        url: https://github.com/OpenSC/OpenSC/releases/download/0.23.0/opensc-0.23.0.tar.gz
+        sha256: a4844a6ea03a522ecf35e49659716dacb6be03f7c010a1a583aaf3eb915ed2e0
 
   - name: qdigidoc4
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.12/qdigidoc4_4.2.12.118.orig.tar.xz
-        sha256: a50dc9b68fd4789d8327ca44406183558b096dd9157642b66f438edbde6f8cab
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.14/qdigidoc4-4.2.14.tar.gz
+        sha256: 6e199d7d0b7b771c79527c22830cce12488036e380d8576389d1f3e75c525114
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch
@@ -163,12 +163,12 @@ modules:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-        sha256: 3d94a1630a3de7f82e8842c70ff88379ed437df6228835e6fc0980872c3c81b7
+        sha256: 8a7b28026bc2065b7c5df7033160a2424df034d344312b297a092b4b75ea4da0
         dest: client
         dest-filename: eu-lotl.xml
       - type: file
         url: https://sr.riik.ee/tsl/estonian-tsl.xml
-        sha256: fd4468149914d20692453a19eecdc70b9e5e4a84485cb298d27a054443337909
+        sha256: bd3af4bff5b1301d576d969668d5bbd2f8bc4e64e46be7513983d54757c71429
         dest: client
         dest-filename: EE.xml
       - type: file
@@ -177,12 +177,12 @@ modules:
         dest-filename: TSL.qrc
       - type: file
         url: https://id.eesti.ee/config.json
-        sha256: d316d6a030fc06ddcd0d2cb999c7c444eb2b5ffa6f891d3e941fbd55cdedebd2
+        sha256: 64e87dd92cbbab35dbdfc9b85ed60872ad38523944909b18241f873ef5aa9f2f
         dest: common
         dest-filename: config.json
       - type: file
         url: https://id.eesti.ee/config.rsa
-        sha256: da94974ac42df84294ebe9f5c773f78ae5f1575f1b82b43709941884ad8afe9d
+        sha256: a8072fe72431c9a0e7c5b66730eaf5b7492d8da3b885915942d79674d330528b
         dest: common
         dest-filename: config.rsa
       - type: file
