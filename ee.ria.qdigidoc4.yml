@@ -134,8 +134,8 @@ modules:
       - rmdir /app/sbin || true
     sources:
       - type: archive
-        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.9.tar.gz
-        sha256: 856a1daed9a5ae1ac265c75ce9f81743e66a972e5be5a1d3a2196ed23f75ea26
+        url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/1.9.8.tar.gz
+        sha256: 6b1065eb97490f5262428e340dc9fc30035c98757155c364403f38a68622db78
       - type: patch
         path: pcsc/pcsc-fedora.patch
 
