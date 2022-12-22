@@ -30,7 +30,6 @@
   </screenshots>
   <provides>
     <binary>qdigidoc4</binary>
-    <binary>chrome-token-signing</binary>
   </provides>
   <releases>
     <release version="4.2.12" date="2022-07-21">

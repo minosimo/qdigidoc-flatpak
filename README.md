@@ -6,21 +6,6 @@ This repo hosts the Flatpak wrapper for [DigiDoc4](https://github.com/open-eid/D
 ## Install
 https://github.com/oskarkook/qdigidoc-flatpak/releases/
 
-## Extension
-This Flatpak contains the necessary module for signing documents with your ID card through browsers.
-Firefox is expected to be installed natively. If you're using a Flatpak version of Firefox, this
-won't work. Chrome is not supported currently.
-
-**BE AWARE! This breaks the security model of Flatpak, as the signing binary will be ran natively!**
-
-You will need to install [this official extension](https://addons.mozilla.org/en-US/firefox/addon/token-signing2).
-Additionally, you need to link the native host messaging manifest from the Flatpak into your Firefox
-installation:
-```sh
-mkdir -p ~/.mozilla/native-messaging-hosts/
-ln -s /var/lib/flatpak/app/ee.ria.qdigidoc4/current/active/files/lib/mozilla/native-messaging-hosts/ee.ria.esteid.json ~/.mozilla/native-messaging-hosts/
-```
-
 ## Smartcard readers
 If your smartcard reader is not recognized, please file an issue and provide your Linux distribution
 name and version. The Flatpak pcsc integration depends on the daemon running on the host, which can
@@ -31,6 +16,12 @@ Ideally, the output from the following commands would be very helpful:
 cat /etc/os-release | head -n 4
 pcscd --version | head -n 1
 ```
+
+## Browser use
+[To use your ID card in the browser, please use the new Web
+eID](https://www.id.ee/en/article/the-latest-version-of-the-id-software-includes-an-innovative-web-eid-interface/)
+solution. This repository used to package the old `chrome-token-signing`
+binary, but it's no longer needed.
 
 ## Making a release
 - Update modules in [ee.ria.qdigidoc4.yml](./ee.ria.qdigidoc4.yml). Check the changelogs of the
