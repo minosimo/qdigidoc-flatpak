@@ -82,8 +82,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.11/libdigidocpp-3.14.11.tar.gz
-        sha256: e5060a1f0441e67724e72aae917fd403e3378c5941be443f7a407b245218e6d2
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.14.10/libdigidocpp-3.14.10.tar.gz
+        sha256: 9fff91e21a3541c7eddd848a135da8c598db14702c503c282c536e9391977f97
 
   - name: openldap
     buildsystem: autotools
