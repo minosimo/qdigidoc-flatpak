@@ -136,8 +136,6 @@ modules:
       - type: archive
         url: https://github.com/LudovicRousseau/PCSC/archive/refs/tags/2.0.0.tar.gz
         sha256: 04f5b9d966b2ada91f699f0b968dd716b381b08ae3cf804832c310f65d329066
-      - type: patch
-        path: pcsc/pcsc-fedora.patch
 
   - name: opensc
     cleanup:

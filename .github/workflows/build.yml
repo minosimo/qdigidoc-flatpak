@@ -7,19 +7,12 @@ jobs:
     container:
       image: bilelmoussaoui/flatpak-github-actions:kde-5.15
       options: --privileged
-    strategy:
-      matrix:
-        distro: [fedora, other]
     steps:
-    - uses: actions/checkout@v2
-    - run: ./configure-manifest.sh
-      env:
-        DISTRO: ${{ matrix.distro }}
     - uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
       with:
-        bundle: qdigidoc-${{ matrix.distro }}.flatpak
+        bundle: qdigidoc.flatpak
         manifest-path: ee.ria.qdigidoc4.yml
-        cache-key: flatpak-builder-${{ matrix.distro }}-${{ github.sha }}
+        cache-key: flatpak-builder-${{ github.sha }}
   release:
     if: startsWith(github.ref, 'refs/tags/')
     needs: build
@@ -31,12 +24,10 @@ jobs:
         with:
           draft: true
           body: |
-            Download the flatpak that matches your distro (or "other" if there is no matching
-            distro) and install it with the following command:
+            Download the flatpak and install it with the following command:
             ```
-            flatpak install qdigidoc-*.flatpak
+            flatpak install qdigidoc.flatpak
             ```
           files: |
-            qdigidoc-fedora-x86_64/qidigidoc-fedora.flatpak
-            qdigidoc-other-x86_64/qidigidoc-other.flatpak
+            qdigidoc-x86_64/qidigidoc.flatpak
 
