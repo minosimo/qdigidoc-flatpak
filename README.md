@@ -4,15 +4,9 @@ DigiDoc4 is an application for digitally signing and encrypting documents.
 
 This repo hosts the Flatpak wrapper for [DigiDoc4](https://github.com/open-eid/DigiDoc4-Client/).
 
-## NOTICE
-
-This software is currently not maintained. It might work, might not. The author is no longer using Linux.
-
-If you wish to take over maintenance, please open a PR that updates it to the latest version and comment under the PR that you'd like to continue maintaining this repo. I will hand it over if the PR works.
-
 ## Install
 
-https://github.com/oskarkook/qdigidoc-flatpak/releases/
+https://github.com/minosimo/qdigidoc-flatpak/releases/
 
 ## Smartcard readers
 
