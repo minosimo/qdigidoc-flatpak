@@ -2,9 +2,7 @@ diff --git a/client/CMakeLists.txt b/client/CMakeLists.txt
 index 6a48248..31f6136 100644
 --- a/client/CMakeLists.txt
 +++ b/client/CMakeLists.txt
-@@ -1,15 +1,7 @@
- set_app_name( PROGNAME qdigidoc4 )
- 
+@@ -1,13 +1,5 @@
 -add_executable( TSLDownload TSLDownload.cpp )
 -target_link_libraries(TSLDownload Qt${QT_VERSION_MAJOR}::Network)
  get_target_property(qtCore_install_prefix Qt${QT_VERSION_MAJOR}::qmake IMPORTED_LOCATION)
