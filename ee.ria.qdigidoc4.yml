@@ -149,8 +149,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.2.12/qdigidoc4_4.2.12.118.orig.tar.xz
-        sha256: a50dc9b68fd4789d8327ca44406183558b096dd9157642b66f438edbde6f8cab
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.3.0/qdigidoc4_4.3.0.4438-2004.tar.xz
+        sha256: 104dbf4f3c5c89b1a2f1b290e79ad9982df7110b6b74416602da56aa6a1e78b0
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch
@@ -161,12 +161,12 @@ modules:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-        sha256: 3f28e47c097221301f6f0a399d6732ca47a3853eaecc81db2a8ddf54be55ef9f
+        sha256: cd5d7cdc8b95352fd9b679c1afa108a5bd1a3a9591aa2b57975a83925961d2bf
         dest: client
         dest-filename: eu-lotl.xml
       - type: file
         url: https://sr.riik.ee/tsl/estonian-tsl.xml
-        sha256: 580944991b2917508f5dc9fe49c7c506e6265356e1e7f8174db4a0effbf2c25a
+        sha256: 33267b34eb651eb226b1a75573bf8c92849d6c2dc1c7fc57c818bf0a47a2b7c3
         dest: client
         dest-filename: EE.xml
       - type: file
@@ -175,12 +175,12 @@ modules:
         dest-filename: TSL.qrc
       - type: file
         url: https://id.eesti.ee/config.json
-        sha256: 19d2988d132a0967be14198140a0dad6a25f09d1ab4b974042c2ab23e449aac0
+        sha256: 4e4ca9b9a0ac2babf7152a24aba9edf4c4f5861ad0b31af27d971ec91ae3c831
         dest: common
         dest-filename: config.json
       - type: file
         url: https://id.eesti.ee/config.rsa
-        sha256: 7208b85ace7f274e7cb9724bfb02dbffe6c12ac5da66c428e480c57eb55686bb
+        sha256: 8226d1458bdff5ba25f8ee3b31a976208b271a44408aa3fe71d5e13383edaa7d
         dest: common
         dest-filename: config.rsa
       - type: file
