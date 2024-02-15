@@ -24,8 +24,15 @@ pcscd --version | head -n 1
 
 To use your ID card in the browser, please use the new [Web eID
 solution](https://www.id.ee/en/article/the-latest-version-of-the-id-software-includes-an-innovative-web-eid-interface/).
-For Linux users, the DigiDoc software itself is not required to use Web eID.
+
+The [web-eID "native component"](https://github.com/web-eid/web-eid-app) application must be installed for web-eID to work:
+- Ubuntu users can install web-eid from [id.ee](https://www.id.ee/en/article/install-id-software/).
+- Fedora users can make use of [this copr](https://copr.fedorainfracloud.org/coprs/abn/web-eid/) while waiting for web-eid to be included.
+- In any case, builds can be downloaded from the [web-eID Actions](https://github.com/web-eid/web-eid-app/actions) (must be signed in to a github account to download).
+
 Note that Web eID does not work with the Flatpak version of Firefox.
+
+The DigiDoc software itself is not required to use Web eID.
 
 This repository used to package the old `chrome-token-signing` binary, but it's
 no longer needed.
