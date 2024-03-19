@@ -58,3 +58,6 @@ pcscd --version | head -n 1
 ## Building the Flatpak
 
 See [build.md](./build.md)
+
+## Thanks
+To [Oskar Köök](https://github.com/oskarkook) for creating this repo.
