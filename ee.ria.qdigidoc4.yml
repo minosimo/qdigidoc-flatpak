@@ -32,8 +32,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/google/flatbuffers/archive/refs/tags/v23.5.26.zip
-        sha256: 57bd580c0772fd1a726c34ab8bf05325293bc5f9c165060a898afa1feeeb95e1
+        url: https://github.com/google/flatbuffers/archive/refs/tags/v24.3.25.zip
+        sha256: e706f5eb6ca8f78e237bf3f7eccffa1c5ec9a96d3c1c938f08dc09aab1884528
   - name: xerces-c
     buildsystem: cmake
     sources:
@@ -88,8 +88,8 @@ modules:
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.15.0/libdigidocpp-3.15.0.tar.gz
-        sha256: 08d1c13dea1d536133be64016bd288fb5bc6bae0f6e604b0754f5d561546d384
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.17.0/libdigidocpp-3.17.0.tar.gz
+        sha256: 72513d8b6371556deb4faa2ecbb86d35746e71ee30cf12020a31fafcbffcc272
 
   - name: openldap
     buildsystem: autotools
