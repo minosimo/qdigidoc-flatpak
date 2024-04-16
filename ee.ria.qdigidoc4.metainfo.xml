@@ -32,6 +32,18 @@
     <binary>qdigidoc4</binary>
   </provides>
   <releases>
+    <release version="4.5.0" date="2024-04-16">
+      <description>
+        <ul>
+          <li>Removed Lithuanian G2 card support</li>
+          <li>Fixed compatibility with Tar specification</li>
+          <li>Handle ASiC-S XAdES signatures</li>
+          <li>Validate CAdES signature</li>
+          <li>Show connection warning when SiVa service is not available</li>
+          <li>Code, Text and translation improvements and updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.4.0" date="2023-08-11">
       <description>
         <ul>
