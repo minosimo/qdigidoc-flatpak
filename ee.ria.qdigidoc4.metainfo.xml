@@ -2,7 +2,18 @@
 <component type="desktop-application">
   <id>ee.ria.qdigidoc4</id>
   <name>DigiDoc4 Client</name>
+  <name xml:lang="ee">DigiDoc4 Klient</name>
+
   <summary>Estonian ID-card desktop application</summary>
+  <summary xml:lang="ee">Eesti ID-tarkvara</summary>
+  <categories>
+      <category>Office</category>
+  </categories>
+
+  <developer id="ee.ria">
+    <name>Information System Authority of Estonia</name>
+    <name xml:lang="ee">Riigi Infosüsteemi Amet</name>
+  </developer>
   <content_rating type="oars-1.1" />
   
   <metadata_license>MIT</metadata_license>
@@ -15,23 +26,40 @@
   
   <description>
     <p>
-      DigiDoc4 Client is a part of Estonian national ID-card software developed by governmental institution - Estonian Information System Authority.
+      DigiDoc4 is an application for interacting with the Estonian ID system. Using an ID-card, Mobile-ID, or Smart-ID, it can sign, encrypt, and decrypt documents and files, and check the validity of digital signatures. It can also view information stored on ID cards and change the PIN1, PIN2 and PUK codes.
     </p>
     <p>
-      DigiDoc4 Client is a program that can be used to sign digitally with ID-card, Mobile-ID and Smart-ID, check the validity of digital signatures, open and save documents inside the signature container, encrypt and decrypt files and review personal information stored on the ID-card. Digitally signed containers are files with .ddoc, .bdoc or .asice extensions, encrypted/decrypted files are with .cdoc extension.
+      Digitally signed containers use .ddoc, .bdoc or .asice extensions, and encrypted/decrypted files use the .cdoc extension.
+    </p>
+
+    <p xml:lang="ee">
+      DigiDoc4 on rakendus, mille abil saab Smart-ID ja Eesti ID-kaardiga digitaalselt allkirjastada, kontrollida digiallkirjade kehtivust ning dokumente avada, salvestada ja jagada. Digitaalallkirjaga formaadid on failid laiendiga bdoc, .ddoc või .asice.
+    </p>
+    <p xml:lang="ee">
+      DigiDoc4 rakendusega saad kontrollida oma ID- kaardi sertifikaadi kehtivust, muuta PIN- ja PUK- koode. Valikus „Minu eID“ kuvatakse ID-kaardi omaniku andmed ja ID-kaardi kehtivusandmed, mis on nähtavad ainult siis, kui ID-kaart on lugejas.
     </p>
   </description>
   
   <launchable type="desktop-id">ee.ria.qdigidoc4.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image>https://www.ria.ee/sites/default/files/styles/1024x/public/news-cover-images/digidoc-4.png?itok=XTy6Lh1E</image>
+      <image>https://github.com/minosimo/qdigidoc-flatpak/assets/19229302/d1e535ce-d86a-4c6b-ab27-b2a8d683b694</image>
+      <caption>DigiDoc4 screenshot</caption>
+      <caption xml:lang="ee">DigiDoc4 ekraanipilt</caption>
     </screenshot>
   </screenshots>
+  <icon type="stock">ee.ria.qdigidoc4</icon>
   <provides>
     <binary>qdigidoc4</binary>
   </provides>
   <releases>
+    <release version="4.5.1" date="2024-04-17">
+      <description>
+        <ul>
+          <li>Version number change to include new libdigidocpp build.</li>
+        </ul>
+      </description>
+    </release>
     <release version="4.5.0" date="2024-04-16">
       <description>
         <ul>
