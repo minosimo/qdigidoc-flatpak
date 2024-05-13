@@ -24,7 +24,7 @@ DigiDoc4 is not required to use your ID card in the browser, but web authenticat
 To use your ID card in the browser, install the [Web eID browser extension](https://addons.mozilla.org/en-US/firefox/addon/web-eid-webextension/), and the Web eID "native component" application:
 - Ubuntu users can install it from [id.ee](https://www.id.ee/en/article/install-id-software/).
 - Fedora users can make use of [this copr](https://copr.fedorainfracloud.org/coprs/abn/web-eid/) while waiting for Web eID to be included in the Fedora repository.
-- For other distros, builds can be downloaded from the [Web eID Actions](https://github.com/web-eid/web-eid-app/actions) (must be signed in with a github account to download).
+- For other distros, builds can be downloaded from the [Web eID repo](https://github.com/web-eid/web-eid-app/releases).
 
 > [!IMPORTANT]
 > Web eID does not work with the Flatpak version of Firefox. Install Firefox from your distro's built-in repository.
