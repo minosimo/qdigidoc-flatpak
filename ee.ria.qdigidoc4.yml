@@ -90,8 +90,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/open-eid/libdigidocpp/releases/download/v3.17.0/libdigidocpp-3.17.0.tar.gz
-        sha256: 72513d8b6371556deb4faa2ecbb86d35746e71ee30cf12020a31fafcbffcc272
+        url: https://github.com/open-eid/libdigidocpp/releases/download/v4.0.0/libdigidocpp_4.0.0.1460-2004.tar.xz
+        sha256: aaf38ed96821c950133d8ba1462dc962909203b639861e958e8212c4abc8b6de
 
   - name: openldap
     buildsystem: autotools
@@ -108,8 +108,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz
-        sha256: 082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0
+        url: https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.8.tgz
+        sha256: 48969323e94e3be3b03c6a132942dcba7ef8d545f2ad35401709019f696c3c4e
       - type: script
         dest-filename: autogen.sh
         commands:
@@ -156,8 +156,8 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.5.1/qdigidoc4_4.5.1.4455-2004.tar.xz
-        sha256: 2d61b10c121aaf45c6a6c1b00862645c39d7dab5e6a15b115239541df9b42600
+        url: https://github.com/open-eid/DigiDoc4-Client/releases/download/v4.6.0/qdigidoc4_4.6.0.4458-2004.tar.xz
+        sha256: 9d5355322a50353a87ed946a3d9fd0243d1793d80f7973efe9fe0789535b31bc
       - type: patch
         path: qdigidoc4/QPKCS11.patch
       - type: patch
@@ -168,12 +168,12 @@ modules:
       # https://github.com/open-eid/DigiDoc4-Client/wiki/DeveloperTips#building-in-sandboxed-environment
       - type: file
         url: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-        sha256: 83bfb2f565a5f84ca8a40ab4fb61077c29d27283b2f59766201602b98a3466c4
+        sha256: 8e4244ae2f3b8618ec0c6a5efda1597de0eda092b1938b693b0b7ad9bbe3807e
         dest: client
         dest-filename: eu-lotl.xml
       - type: file
         url: https://sr.riik.ee/tsl/estonian-tsl.xml
-        sha256: 472d248b30c849873173c6dee0a3de417996110c2704cf5a261bca99d3c0d1d4
+        sha256: 2e29986242db1663e1721344dfc6ead7cc02bbfb0c567268edd8f32cbf4bb65b
         dest: client
         dest-filename: EE.xml
       - type: file
@@ -182,12 +182,12 @@ modules:
         dest-filename: TSL.qrc
       - type: file
         url: https://id.eesti.ee/config.json
-        sha256: 2ce5693a53db2280239dab0aed36cd1a6befc5bf81639319c481c11f172bd159
+        sha256: 95f826409e61b54f615806722d6a262c8d3cf99fdd297e7304cd07261374bfd2
         dest: common
         dest-filename: config.json
       - type: file
         url: https://id.eesti.ee/config.rsa
-        sha256: f036793c18e7b97f49727e25a68b3c730b35d83d3c6bee534fde90650397ce66
+        sha256: 501eb9ed9681c9b5ebec5fcdd56925402ca1f156d2f8964fc9cc427a68f0ac86
         dest: common
         dest-filename: config.rsa
       - type: file
